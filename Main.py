@@ -4,8 +4,8 @@ FindFile = True
 Running = True
 while FindFile:
     try:
-        #zips, towns = index_markets(input("File Name? "))
-        zips, towns = index_markets('markets-updated.csv')
+        zips, towns = index_markets(input("File Name? "))
+        #zips, towns = index_markets('markets-updated.csv')
         FindFile = False
     except FileNotFoundError:
         print("File not found, or it is not in the right directory.")
