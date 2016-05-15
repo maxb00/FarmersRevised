@@ -25,6 +25,7 @@ def index_markets(location):
             ziplist[localzip].append((info[1], info[2], info[3], info[4], info[6], info[7]))
     return ziplist, townlist
 
+
 def zipresults(query, markets):
     # Zip searching
     results = []
@@ -35,6 +36,7 @@ def zipresults(query, markets):
     except KeyError:
         return "Zip Code not found. Maybe your local market is not listed?"
     return results
+
 
 def townresults(query, zips, towns):
     # Town searching, if integer conversion failed.
