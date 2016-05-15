@@ -1,10 +1,11 @@
-from Functions import index_markets, townresults, zipresults
+from Functions import index_markets, townresults, zipresults, printresults
 
 FindFile = True
 Running = True
 while FindFile:
     try:
-        zips, towns = index_markets(input("File Name? "))
+        #zips, towns = index_markets(input("File Name? "))
+        zips, towns = index_markets('markets-updated.csv')
         FindFile = False
     except FileNotFoundError:
         print("File not found, or it is not in the right directory.")
@@ -23,6 +24,8 @@ while Running:
     else:
         try:
             int(query)
-            zipresults(query, zips)
+            results = zipresults(query, zips)
+            printresults(results)
         except ValueError:
-            townresults(query, zips, towns)
+            results = townresults(query, zips, towns)
+            printresults(results)
